@@ -3,7 +3,7 @@ import React from "react";
 const Banner = () => {
   return (
     <div>
-      <div className="hero h-[60vh]">
+      <div className="hero">
         <img
           className="hero-overlay h-[70vh] inset-0 bg-white opacity-10  w-full rounded-lg"
           src="/src/assets/Images/Education.png"
