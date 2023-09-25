@@ -1,10 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Donation = ({donation}) => {
-    const {picture, title, category, category_bg_color, card_bg_color, text_button_bg_color, price, description} = donation;
+    const {id, picture, title, category, category_bg_color, card_bg_color, text_button_bg_color, price, description} = donation;
     return (
         <div>
             {/* card */}
+            <Link to={`/donations/${id}`}>
             <div>
             <div style={{backgroundColor: card_bg_color}} className="card">
             <figure><img src={picture} /></figure> 
@@ -14,6 +16,7 @@ const Donation = ({donation}) => {
            </div>
      </div>
  </div>
+            </Link>
             
         </div>
     );
