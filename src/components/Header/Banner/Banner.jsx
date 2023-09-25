@@ -22,7 +22,7 @@ const Banner = () => {
               placeholder="Search here...."
             />
             <button className=" text-white font-medium py-2 px-3 rounded-r-lg bg-[#FF444A] ">
-              Get Started
+            Search
             </button>
           </div>
         </div>
