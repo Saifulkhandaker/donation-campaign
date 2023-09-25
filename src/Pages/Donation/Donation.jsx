@@ -29,7 +29,7 @@ const Donation = () => {
                        donations.slice(0, dataLength).map(donation => <DonationsItem donation={donation} ></DonationsItem>)
                        }
                     </div>
-                    <div className={dataLength === donations.length ? "hidden" : ''}>
+                    <div className={dataLength === donations.length ? "hidden" : '' || donations.length < 4 ? "hidden" : ''}>
                         <button
                         onClick={() => setDataLength(donations.length)}
                         className="btn px-8 bg-black text-white mt-8">See All</button>
