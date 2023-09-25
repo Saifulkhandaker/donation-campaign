@@ -5,7 +5,7 @@ const Banner = () => {
     <div>
       <div className="hero">
         <img
-          className="hero-overlay h-[70vh] inset-0 bg-white opacity-20  w-full rounded-lg"
+          className="hero-overlay md:h-[70vh] inset-0 bg-white opacity-20  w-full rounded-lg"
           src="/src/assets/Images/Banner.png"
           alt=""
         />
