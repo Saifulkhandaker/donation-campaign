@@ -6,11 +6,11 @@ const Donation = ({donation}) => {
         <div>
             {/* card */}
             <div>
-            <div className="card">
+            <div style={{backgroundColor: card_bg_color}} className="card">
             <figure><img src={picture} /></figure> 
               <div className="card-body px-2">
-                <h3>{category}</h3>
-              <h2 className="card-title">{title}</h2>
+                <h3 className='font-semibold rounded-md py-1 px-3 w-fit' style={{ backgroundColor:category_bg_color, color: text_button_bg_color}}>{category}</h3>
+              <h2 style={{color: text_button_bg_color}} className="card-title">{title}</h2>
            </div>
      </div>
  </div>
