@@ -5,8 +5,8 @@ const Banner = () => {
     <div>
       <div className="hero">
         <img
-          className="hero-overlay h-[70vh] inset-0 bg-white opacity-10  w-full rounded-lg"
-          src="/src/assets/Images/Education.png"
+          className="hero-overlay h-[70vh] inset-0 bg-white opacity-20  w-full rounded-lg"
+          src="/src/assets/Images/Banner.png"
           alt=""
         />
         <div className="hero-content text-center text-neutral-content">
