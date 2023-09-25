@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SingleDonation = () => {
   const [donation, setDonation] = useState({});
@@ -24,8 +26,7 @@ const SingleDonation = () => {
     if(!donationItems){
       addedDonationsArray.push(donation);
       localStorage.setItem('donations', JSON.stringify(addedDonationsArray));
-      alert('Donation added');
-
+      toast.success('Your kindness shines ! You have successfully donated.');
     }
     else{
       const isExist = donationItems.find(donation => donation.id == id);
@@ -33,10 +34,10 @@ const SingleDonation = () => {
       if(!isExist){
         addedDonationsArray.push(...donationItems,donation);
       localStorage.setItem('donations', JSON.stringify(addedDonationsArray))
-      alert('Donation added');
+      toast.success('Your kindness shines ! You have successfully donated.');
       }
       else{
-        alert('sorry this item already exist')
+      toast.error('Thank you for your generosity! This item has already been donated.');
       }
     }
   }
@@ -55,7 +56,18 @@ const SingleDonation = () => {
           <h1 className="text-3xl font-bold">{title}</h1>
           <p className="mt-2 space-y-2">{description}</p>
         </div>
-
+        <ToastContainer
+position="top-center"
+autoClose={3000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="light"
+/>
      </div>
   );
 };
