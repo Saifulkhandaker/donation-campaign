@@ -4,6 +4,7 @@ import Home from "../Pages/Home/Home";
 import Donation from "../Pages/Donation/Donation";
 import Statistics from "../Pages/Statistics/Statistics";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import SingleDonation from "../Pages/SingleDonation/SingleDonation";
 
 const myCreatedRoute = createBrowserRouter([
     {
@@ -23,6 +24,11 @@ const myCreatedRoute = createBrowserRouter([
             {
                 path: "/statistics",
                 element: <Statistics></Statistics>
+            },
+            {
+                path: "/donations/:id",
+                element: <SingleDonation></SingleDonation>,
+                loader: () => fetch('/donation.json/')
             }
         ]
     }
