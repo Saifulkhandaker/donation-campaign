@@ -1,9 +1,12 @@
 import React from 'react';
+import PieChartExample from '../../components/PieChartExample';
+
 
 const Statistics = () => {
     return (
         <div>
-            This is Statistics
+            <PieChartExample></PieChartExample>
+    
         </div>
     );
 };
