@@ -1,23 +1,33 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 
 const Statistics = () => {
   const donationData = useLoaderData();
   const [donation, setDonation] = useState(0);
+  const [donationItemsLength, setDonationItemsLength] = useState(0)
 
   useEffect(() => {
-    const donateItems = JSON.parse(localStorage.getItem("donate")) || [];
-    const donationItemsLength = donateItems.length;
-    const donationPercentage = (donationItemsLength / donationData.length) * 100;
+    const donationItems = JSON.parse(localStorage.getItem('donations')) || [];
+    console.log(donationItems);
+
+    const donationItemsLength = donationItems.length;
+    setDonationItemsLength(donationItemsLength);
+
+    const donationDataLength = donationData.length
+    console.log(donationDataLength);
+
+
+    const donationPercentage = (donationDataLength - donationItemsLength);
+
     setDonation(donationPercentage);
   }, [donationData]);
-
   const data = [
-    { name: 'Total Donation', value: donationData.length },
-    { name: 'Your Donation', value: donation },
+    { name: 'Total Donation', value: donation },
+    { name: 'Your Donation', value: donationItemsLength },
   ];
-console.log(donation);
+
+
   const COLORS = ['#FF444A', '#00C49F'];
 
   return (
@@ -32,7 +42,7 @@ console.log(donation);
               outerRadius={80}
               fill="#8884d8"
               dataKey="value"
-              label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(2)}%`}
+              label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
             >
               {data.map((entry, index) => (
                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
