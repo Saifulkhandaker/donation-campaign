@@ -2,8 +2,8 @@ import React from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 
 const data = [
-  { name: 'Total Donation:', value: 3480 },
-  { name: 'Your Donation:', value: 200 },
+  { name: 'Total Donation:', value: 12 },
+  { name: 'Your Donation:', value: 3},
 ];
 
 const COLORS = ['#FF444A', '#00C49F']; // Color codes for the pie chart slices
