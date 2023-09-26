@@ -6,7 +6,7 @@ const data = [
   { name: 'Your Donation:', value: 200 },
 ];
 
-const COLORS = ['#FFBB28', '#00C49F']; // Color codes for the pie chart slices
+const COLORS = ['#FF444A', '#00C49F']; // Color codes for the pie chart slices
 
 function PieChartExample() {
   return (

@@ -1,4 +1,5 @@
 import React from "react";
+import image from "../../../assets/Images/Banner.png"
 
 const Banner = () => {
   return (
@@ -6,7 +7,7 @@ const Banner = () => {
       <div className="hero">
         <img
           className="hero-overlay md:h-[70vh] inset-0 bg-white opacity-20  w-full rounded-lg"
-          src="/src/assets/Images/Banner.png"
+          src={image}
           alt=""
         />
         <div className="hero-content text-center text-neutral-content">
